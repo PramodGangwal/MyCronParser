@@ -1,0 +1,35 @@
+### Not For External Use.
+This library is only for personal use and is not intended to be used for any production applications.
+
+### Basic-cron-parser
+This is a very basic-cron-parser library that handles only the bare minimum functionality.
+
+#### Usage
+- Takes only one string parameter
+- The string parameter is a space separated string which contains the cron scheduling information (5 units of time) and command that is to be executed
+- The order of the cron scheduling information is the following:
+ - The first cron schedule unit denotes the minutes at which the command is to be executed.
+ - The second cron schedule unit denotes the hours at which the command is to be executed.
+ - The third cron schedule unit denotes the days of the month at which the command is to be executed.
+ - The fourth cron schedule unit denotes the months at which the command is to be executed.
+ - the fifth cron schedule unit denotes the days of the week at which the command is to be executed.
+ - The sixth and the last cron schedule unit denotes the command to be executed.
+
+#### Exceptions
+- The cron parser doesn't support all the standard/complex parsing logic and throws illegal argument exception.
+- It will throw an exception if it is not able to parse the argument value.
+
+#### Supported Features
+- Supports Minutes, hours, days, months & week days.
+- Supports usage of * in the time units
+- Supports ranges of the time units
+- Supports comma separated list of time units
+- support String format for the Months (JAN, FEB etc.) and weeks (SUN, WED etc.)
+- Supports basic use of the slashes.
+
+#### Unsupported Features
+- Does not support all the standard/complex parsing logic and throws illegal argument exception.
+- Does not support complex and mixed parsing logic (like *\[2-5] etc.).
+- Does not support L usage in months and weeks.
+- Does not verify that the the number of the days for the month is the correct (eg Feb should have 28 on leap years otherwise 29).
+- Does not verify the double usage of question mark (?) in the argument.
